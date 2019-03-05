@@ -22,6 +22,7 @@ for col in df.columns:
 dg = df.groupby(pd.Grouper(key='Date', freq='1M')).sum()
 dg.index = dg.index.strftime('%Y-%m')
 dg.index.name = 'Month'
+print(dg)
 
 fields = [title for title in list(dg) if title != "Date"]
 
